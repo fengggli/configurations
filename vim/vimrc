@@ -108,6 +108,14 @@ let g:ycm_server_log_level = 'debug'
 " ale default, use :echo g: gle_c.. to check
 " ALEInfo
 let g:ale_c_parse_compile_commands = 1
+
+" By default will use google style(if no .clang-format file provided)
+" you can also customize:
+"   lang-format -style=google -dump-config > .clang-format
+let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format']}
+
+" [NONEED] let b:ale_c_clangformat_options='-style=file' " Ale does it for me somehow..
+let g:ale_fix_on_save = 1
 " let g:ale_completion_enabled = 1
 
 
@@ -221,21 +229,7 @@ if has("autocmd")
 
   augroup END
 
-  augroup clangtools
-  " lang-format -style=google -dump-config > .clang-format
-    autocmd!
-
-		function! Formatonsave()
-			let l:formatdiff = 1
-      py3f /usr/share/clang/clang-format-6.0/clang-format.py
-		endfunction
-
-		autocmd BufWritePre *.h,*.cc,*.cpp,*.hpp call Formatonsave()
-
-  augroup END
-
 endif
-
 
 augroup resCur
 	autocmd!
