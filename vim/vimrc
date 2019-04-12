@@ -109,6 +109,9 @@ let g:ycm_server_log_level = 'debug'
 " ALEInfo
 let g:ale_c_parse_compile_commands = 1
 
+" use  -Wall -Wextra -Wconversion in debug build, so vim gives more warning
+let g:ale_c_build_dir_names = ['cmake-build-debug', 'build_debug', 'build']
+
 " By default will use google style(if no .clang-format file provided)
 " you can also customize:
 "   lang-format -style=google -dump-config > .clang-format
