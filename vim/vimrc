@@ -118,7 +118,8 @@ let g:ale_c_build_dir_names = ['cmake-build-debug', 'build_debug', 'build']
 let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format']}
 
 " [NONEED] let b:ale_c_clangformat_options='-style=file' " Ale does it for me somehow..
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
+nmap <F9> <Plug>(ale_fix)
 " let g:ale_completion_enabled = 1
 
 
@@ -136,16 +137,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
-
-" For Taglist"
-" use ctags -R to generate tags
-" F9 will trigger taglist
-"
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-"use F9 to open taglist only
-map <silent> <F9> :TlistToggle<cr>
-
 
 " add the tagbar support
 nmap <F8> :TagbarToggle<CR>
