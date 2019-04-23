@@ -117,6 +117,9 @@ let g:ale_c_build_dir_names = ['cmake-build-debug', 'build_debug', 'build']
 "   lang-format -style=google -dump-config > .clang-format
 let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format']}
 
+" cquery: need to install, also cquery by default will only read
+" compile_options in project root; an workaround is using symbolic link
+
 " [NONEED] let b:ale_c_clangformat_options='-style=file' " Ale does it for me somehow..
 " let g:ale_fix_on_save = 1
 nmap <F9> <Plug>(ale_fix)

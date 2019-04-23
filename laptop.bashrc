@@ -52,7 +52,4 @@ export PATH=/home/lifeng/tools/ParaView-5.4.1-Qt5-OpenGL2-MPI-Linux-64bit/bin:~/
 
 # system use /usr/python3, spyder uses anaconda
 CONDA_PATH=$HOME/software/anaconda3
-if [ -d $CONDA_PATH ]; then
-    export PATH=$CONDA_PATH/bin:$PATH
-    python --version
-fi
+export PATH=$PATH:${CONDA_PATH}/bin/:$HOME/software/FlameGraph
