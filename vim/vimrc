@@ -112,7 +112,7 @@ let g:ale_c_parse_compile_commands = 1
 " By default will use google style(if no .clang-format file provided)
 " you can also customize:
 "   lang-format -style=google -dump-config > .clang-format
-let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format']}
+let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format'],'cuda': ['clang-format']}
 
 " [NONEED] let b:ale_c_clangformat_options='-style=file' " Ale does it for me somehow..
 let g:ale_fix_on_save = 1
