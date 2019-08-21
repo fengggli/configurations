@@ -10,6 +10,7 @@ alias start_pvserver_reversed="pvserver -rc --client-host=140.182.0.241"
 # http://localhost:9981/
 alias tvserver="systemctl start tvheadend"
 
+alias makedocs='PATH=/home/lifeng/software/anaconda3/bin/:${PATH} make html'
 
 
 # close firefox
