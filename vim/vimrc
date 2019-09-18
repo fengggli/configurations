@@ -25,7 +25,7 @@ Plugin 'scrooloose/nerdcommenter'
 " auto completion
 " see install.sh
 " to add compiler flags use the CMAKE_EXPORT_COMPILE_COMMANDS
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " fugitive is a tool for Git and Github
 " plugin on GitHub repo
@@ -123,7 +123,7 @@ let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format'],'cuda': ['cl
 " [NONEED] let b:ale_c_clangformat_options='-style=file' " Ale does it for me somehow..
 " let g:ale_fix_on_save = 1
 nmap <F9> <Plug>(ale_fix)
-" let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 
 
 
