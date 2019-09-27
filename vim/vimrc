@@ -117,6 +117,10 @@ let g:ale_c_build_dir_names = ['cmake-build-debug', 'build_debug', 'build']
 "   lang-format -style=google -dump-config > .clang-format
 let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format'],'cuda': ['clang-format']}
 
+let g:ale_linters = {'c': ['clangd'], 'cpp': ['clangd']}
+let g:ale_cpp_clangd_options = '-compile-commands-dir=build_debug'
+let g:ale_c_clangd_options = '-compile-commands-dir=build_debug'
+
 " cquery: need to install, also cquery by default will only read
 " compile_options in project root; an workaround is using symbolic link
 
@@ -124,6 +128,7 @@ let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format'],'cuda': ['cl
 " let g:ale_fix_on_save = 1
 nmap <F9> <Plug>(ale_fix)
 let g:ale_completion_enabled = 1
+set completeopt+=noinsert
 
 
 
