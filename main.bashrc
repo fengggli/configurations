@@ -41,8 +41,8 @@ if [ x`hostname | cut -c 1-2` == x"br" ]; then
     source  $HOME/configurations/bridges.bashrc
     echo "----[$MYPREFIX]----: now using PSC Bridges"
 elif [ x`hostname | cut -c 8-16` == x"stampede2" ]; then
-    source  $HOME/configurations/stampede2.bashrc
-    echo "----[$MYPREFIX]----: now using TACC Stampede2"
+    #source  $HOME/configurations/stampede2.bashrc
+    echo "----[$MYPREFIX]----: now using TACC Stampede2, doing nothing!"
 
 elif [ x`hostname | cut -c 1-5` == x"comet" ]; then
     source  $HOME/configurations/comet.bashrc
@@ -75,5 +75,6 @@ fi
     #python --version
 #fi
 
-export PATH=$HOME/configurations/bin:$HOME/.local/bin:$PATH:$HOME/software/install/bin/
+export PATH=$HOME/configurations/bin:$HOME/.local/bin:$HOME/software/install/bin/:$PATH
+export MODULEPATH=$HOME/configurations/modulefiles/:$MODULEPATH
 export MANPATH=$HOME/software/install/share/man:$MANPATH
