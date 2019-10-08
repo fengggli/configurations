@@ -11,6 +11,11 @@ then source your .bashrc
 ```shell
 source .bashrc
 ```
+
+## homebrewed packages
+```
+cmake -DBUILD_LLVM=on -DBUILD_VIM -DCMAKE_INSTALL_PREFIX=${HOME}/software/install ..
+```
 ## (Deprecated, use ./install.sh instead)
 configure vim
 ```shell
