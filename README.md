@@ -12,9 +12,9 @@ then source your .bashrc
 source .bashrc
 ```
 
-## homebrewed packages
+## homebrewed packages(if vim8 not provided from distro)
 ```
-cmake -DBUILD_LLVM=on -DBUILD_VIM -DCMAKE_INSTALL_PREFIX=${HOME}/software/install ..
+cmake  ..
 ```
 ## (Deprecated, use ./install.sh instead)
 configure vim
