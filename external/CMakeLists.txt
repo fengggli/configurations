@@ -13,32 +13,21 @@ ExternalProject_Add(gnu
   LOG_INSTALL 1
   )
 
-#set(LLVM_PREFIX "${CMAKE_BINARY_DIR}/external/llvmproj")
+set(LLVM_PREFIX "${CMAKE_BINARY_DIR}/external/llvmproj")
 #http://llvm.org/docs/GettingStarted.html#checkout
-#ExternalProject_Add(llvmproj
-  #PREFIX ${LLVM_PREFIX}
-  #GIT_REPOSITORY "https://github.com/llvm/llvm-project"
-  #GIT_TAG "llvmorg-8.0.1"
-  #UPDATE_COMMAND ""
-  #SOURCE_DIR ${LLVM_PREFIX}/src/llvmproj/llvm
-  #INSTALL_DIR ${LLVM_PREFIX}/install
-  #CMAKE_ARGS -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_C_COMPILER=icc -DCMAKE_CXX_COMPILER=icpc -DLLVM_TEMPORARILY_ALLOW_OLD_TOOLCHAIN=on -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
-  #LOG_DOWNLOAD 1
-  #LOG_INSTALL 1
-  #)
+ExternalProject_Add(llvmproj
+  PREFIX ${LLVM_PREFIX}
+  GIT_REPOSITORY "https://github.com/llvm/llvm-project"
+  GIT_TAG "llvmorg-8.0.1"
+  UPDATE_COMMAND ""
+  SOURCE_DIR ${LLVM_PREFIX}/src/llvmproj/llvm/llvm
+  INSTALL_DIR ${LLVM_PREFIX}/install
+  CMAKE_ARGS -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_CXX_LINK_FLAGS=-Wl,-rpath,${GNU_PREFIX}/install/lib64 -L${GNU_PREFIX}/install/lib64  -DCMAKE_C_COMPILER=${GNU_PREFIX}/install/bin/gcc -DCMAKE_CXX_COMPILER=${GNU_PREFIX}/install/bin/g++ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
+  LOG_DOWNLOAD 1
+  LOG_INSTALL 1
+  )
 
-
-#set(clangtools_PREFIX "${CMAKE_BINARY_DIR}/external/clangtools")
-#ExternalProject_Add(clangtools
-  #PREFIX ${clangtools_PREFIX}
-  #URL "https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/clang-tools-extra-8.0.1.src.tar.xz"
-  #UPDATE_COMMAND ""
-  #INSTALL_DIR ${clangtools_PREFIX}/install
-  #CMAKE_ARGS  -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
-  #LOG_DOWNLOAD 1
-  #LOG_INSTALL 1
-  #)
-
+add_dependencies(llvmproj gnu)
 
 if(BUILD_VIM)
 set(NCURSES_PREFIX "${CMAKE_BINARY_DIR}/external/ncurses")
