@@ -14,7 +14,7 @@ prepend_path("LD_LIBRARY_PATH", pathJoin( vim_dir , "lib"))
 
 local gnu_dir = pathJoin( os.getenv("HOME"), "configurations/build/external/gnu/install")
 prepend_path("PATH", pathJoin( gnu_dir , "bin"))
-prepend_path("LD_LIBRARY_PATH", pathJoin( gnu_dir , "lib"))
+prepend_path("LD_LIBRARY_PATH", pathJoin( gnu_dir , "lib64"))
 
 local llvmproj_dir = pathJoin( os.getenv("HOME"), "configurations/build/external/llvmproj/install")
 prepend_path("PATH", pathJoin( llvmproj_dir , "bin"))
