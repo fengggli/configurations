@@ -11,6 +11,11 @@ then source your .bashrc
 ```shell
 source .bashrc
 ```
+
+## homebrewed packages(if vim8 not provided from distro)
+```
+cmake  ..
+```
 ## (Deprecated, use ./install.sh instead)
 configure vim
 ```shell
