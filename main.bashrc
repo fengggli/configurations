@@ -78,3 +78,7 @@ fi
 export PATH=$HOME/configurations/bin:$HOME/.local/bin:$HOME/software/install/bin/:$PATH
 export MODULEPATH=$HOME/configurations/modulefiles/:$MODULEPATH
 export MANPATH=$HOME/software/install/share/man:$MANPATH
+
+alias pen_external='xsetwacom set "Wacom Intuos S Pen stylus" MapToOutput HDMI-2'
+alias pen_local='xsetwacom set "Wacom Intuos S Pen stylus" MapToOutput eDP-1'
+
