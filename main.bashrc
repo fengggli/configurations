@@ -78,3 +78,7 @@ fi
 export PATH=$HOME/configurations/bin:$HOME/.local/bin:$HOME/software/install/bin/:$PATH
 export MODULEPATH=$HOME/configurations/modulefiles/:$MODULEPATH
 export MANPATH=$HOME/software/install/share/man:$MANPATH
+
+
+for f in ~/configurations/myconfigs.d/*.sh; do source $f; done
+
