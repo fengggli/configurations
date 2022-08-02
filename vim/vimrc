@@ -16,7 +16,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " latex support
-Plugin 'lervag/vimtex'
+" Plugin 'lervag/vimtex'
 
 " The following are examples of different formats supported.
 " auto commenter 
@@ -174,72 +174,72 @@ silent! so .vimlocal
 ""set hi Search cterm=NONE ctermfg=white ctermbg=blue
 hi Search ctermfg=grey ctermbg=black
 
-" file template
-" see https://shapeshed.com/vim-templates/ for more info
-" also http://vim.wikia.com/wiki/Auto_commands_for_C/C%2B%2B_editing
-if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/configurations/vim/templates/skeleton.sh
-    "autocmd BufWritePre,FileWritePre *.sh   ks|call LastMod()|'s
+"" file template
+"" see https://shapeshed.com/vim-templates/ for more info
+"" also http://vim.wikia.com/wiki/Auto_commands_for_C/C%2B%2B_editing
+"if has("autocmd")
+  "augroup templates
+    "autocmd BufNewFile *.sh 0r ~/configurations/vim/templates/skeleton.sh
+    ""autocmd BufWritePre,FileWritePre *.sh   ks|call LastMod()|'s
 
-    autocmd BufNewFile *.cc 0r ~/configurations/vim/templates/skeleton.c
-    "autocmd BufWritePre,FileWritePre *.cc   ks|call LastMod()|'s
-    autocmd BufNewFile *.cc 0r ~/configurations/vim/templates/skeleton.c
+    "autocmd BufNewFile *.cc 0r ~/configurations/vim/templates/skeleton.c
+    ""autocmd BufWritePre,FileWritePre *.cc   ks|call LastMod()|'s
+    "autocmd BufNewFile *.cc 0r ~/configurations/vim/templates/skeleton.c
 
-    autocmd BufNewFile *.cpp 0r ~/configurations/vim/templates/skeleton.c
-    "autocmd BufWritePre,FileWritePre *.h   ks|call LastMod()|'s
+    "autocmd BufNewFile *.cpp 0r ~/configurations/vim/templates/skeleton.c
+    ""autocmd BufWritePre,FileWritePre *.h   ks|call LastMod()|'s
 
-    autocmd BufNewFile *.h 0r ~/configurations/vim/templates/skeleton.c |ks |call append(line('$'), IncludeGuard())|'s
-    autocmd BufNewFile *.hpp 0r ~/configurations/vim/templates/skeleton.c |ks |call append(line('$'), IncludeGuard())|'s
-    "autocmd BufWritePre,FileWritePre *.c   ks|call LastMod()|'s
+    "autocmd BufNewFile *.h 0r ~/configurations/vim/templates/skeleton.c |ks |call append(line('$'), IncludeGuard())|'s
+    "autocmd BufNewFile *.hpp 0r ~/configurations/vim/templates/skeleton.c |ks |call append(line('$'), IncludeGuard())|'s
+    ""autocmd BufWritePre,FileWritePre *.c   ks|call LastMod()|'s
 
-    autocmd BufNewFile CHANGELOG* 0r ~/configurations/vim/templates/skeleton.CHANGELOG.md |ks|'s
-   "  autocmd BufReadPost,BufNewFile  CHANGELOG* ks|call append(8, NewLog())|'s
+    "autocmd BufNewFile CHANGELOG* 0r ~/configurations/vim/templates/skeleton.CHANGELOG.md |ks|'s
+   ""  autocmd BufReadPost,BufNewFile  CHANGELOG* ks|call append(8, NewLog())|'s
 
-	function! FileName()
-	   return expand('%:t')
-	endfunction
-	function! HeadName()
-	   return toupper(substitute(FileName(), '\.', "_", "g"))
-	endfunction
-	function! IncludeGuard()
-	   let lines = []
-	   let lines +=  ["#ifndef " . HeadName() . "_"]
-	   let lines +=  ["#define " . HeadName() . "_"]
-	   let lines +=  ["#ifdef __cplusplus"]
-     let lines +=  ["extern \"C\" {"]
-     let lines +=  ["#endif"]
-	   let lines +=  [""]
-     let lines +=  ["#ifdef __cplusplus"]
-     let lines +=  ["}"]
-     let lines +=  ["#endif"]
-	   let lines +=  ["#endif"]
-	   return lines
-	endfunction
-"autocmd BufNewFile *.h  call append(0, IncludeGuard())
-"
-  augroup END
+	"function! FileName()
+		 "return expand('%:t')
+	"endfunction
+	"function! HeadName()
+		 "return toupper(substitute(FileName(), '\.', "_", "g"))
+	"endfunction
+	"function! IncludeGuard()
+		 "let lines = []
+		 "let lines +=  ["#ifndef " . HeadName() . "_"]
+		 "let lines +=  ["#define " . HeadName() . "_"]
+		 "let lines +=  ["#ifdef __cplusplus"]
+     "let lines +=  ["extern \"C\" {"]
+     "let lines +=  ["#endif"]
+		 "let lines +=  [""]
+     "let lines +=  ["#ifdef __cplusplus"]
+     "let lines +=  ["}"]
+     "let lines +=  ["#endif"]
+		 "let lines +=  ["#endif"]
+		 "return lines
+	"endfunction
+""autocmd BufNewFile *.h  call append(0, IncludeGuard())
+""
+  "augroup END
 
-  " older version of vim doesn't recoganize md as markdown
-  augroup markdown
+  "" older version of vim doesn't recoganize md as markdown
+  "augroup markdown
 
-    " remove previous autocmds
-    autocmd!
+    "" remove previous autocmds
+    "autocmd!
 
-    " set every new or read *.md buffer to use the markdown filetype
-    au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+    "" set every new or read *.md buffer to use the markdown filetype
+    "au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
-  augroup END
+  "augroup END
 
-endif
+"endif
 
-augroup resCur
-	autocmd!
-        autocmd BufReadPost * call setpos(".", getpos("'\""))
-augroup END
+"augroup resCur
+	"autocmd!
+        "autocmd BufReadPost * call setpos(".", getpos("'\""))
+"augroup END
 
 " this makes vim look better! from https://unix.stackexchange.com/a/88880
 color desert
 
 " trailing space
-match Error /\s\+$/
+" match Error /\s\+$/

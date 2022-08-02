@@ -13,4 +13,6 @@ mkdir -pv ${USER_FONT_DIR}
 mv PowerlineSymbols.otf ${USER_FONT_DIR}
 fc-cache -vf ${USER_FONT_DIR}
 
-
+FONTS_CONF=${HOME}/.config/fontconfig/conf.d/
+mkdir -pv $FONTS_CONF
+mv 10-powerline-symbols.conf $FONTS_CONF 
